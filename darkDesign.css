@@ -26,3 +26,29 @@ body{
     width:95%;
   }
 }
+
+footer{
+  background-color: #D7C4B7;
+  color: #000000;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.nav-justified .nav-link {
+  color: #5c4a3c !important; /* Un café oscuro texturizado para que sea legible sobre el fondo café claro */
+  transition: all 0.3s ease; /* Hace que el cambio de color sea suave y fluido, no un golpe brusco */
+}
+
+/* 2. EFECTO HOVER: Cuando el mouse se posiciona encima de una opción inactiva */
+.nav-justified .nav-link:not(.active):hover {
+  background-color: rgba(255, 255, 255, 0.5) !important; /* Se vuelve blanco translúcido (tipo vidrio) */
+  color: #3d2f24 !important; /* El texto se oscurece un poco más para mantener el contraste */
+}
+
+/* 3. CONTROLAR LA PÍLDORA SELECCIONADA (La que está activa fija) */
+.nav-justified .nav-link.active {
+  background-color: #ffffff !important; /* Blanco sólido para la pestaña de la página actual */
+  color: #3d2f24 !important; /* Color del texto dentro de la píldora blanca fija */
+}
+
