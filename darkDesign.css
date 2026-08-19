@@ -1,5 +1,28 @@
+body{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: url('Fondo_pagina.png');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: #fdf8f5;
+}
+
+.content {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
 .menu{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  width: 10%;
+  gap: 10px;
+}
+
+@media (max_width: 768px){
+  .contenedor{
+    width:95%;
+  }
 }
