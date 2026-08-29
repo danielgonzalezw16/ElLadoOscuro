@@ -1,0 +1,164 @@
+body{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: url('darkAssets/Fondos/Peluches_Final_Actual.png');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: #fdf8f5;
+}
+
+.content {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.busqueda{
+  display: grid;
+  border:rgb(255, 221, 201);
+  background-position: center center;
+  background-color: #d49362;
+  background-attachment: fixed;
+  width: 95%;
+  gap: 2px;
+  margin:10px;
+}
+
+/*SECCION PARA EL MENU PRINCIPAL*/
+/*------------------------------*/
+.menu{
+  display: grid;
+  width: 10%;
+  gap: 10px;
+  margin-bottom: 100px;
+}
+
+/* 1. ESTILO INICIAL: Color de texto y transición suave */
+.nav-justified .nav-link {
+  color: #5c4a3c !important; /* Café Oscuro Texturizado para legibilidad sobre el Fondo Café */
+  transition: all 0.3s ease;   /* Hace que el cambio de color sea suave y fluido, no un golpe brusco */
+}
+
+/* 2. Efecto Hover: Efecto al colocar mouse encima de Opcion Inactiva */
+.nav-justified .nav-link:not(.active):hover {
+  background-color: rgba(255, 255, 255, 0.5) !important; /* Se vuelve blanco translúcido (tipo vidrio) */
+  color: #3d2f24 !important; /* El texto se oscurece un poco más para mantener el contraste */
+  border-radius: 20px; /* Bordes redondeados para un efecto más suave */
+}
+
+/* 3. Control de Pildora en Uso (La que está activa fija) */
+.nav-justified .nav-link.active {
+  background-color: #ffffff !important; /* Blanco sólido para la pestaña de la página actual */
+  color: #3d2f24 !important; /* Color del texto dentro de la píldora blanca fija */
+}
+
+/*------------------------------*/
+/*       Fin Seccion Menu       */
+/*------------------------------*/
+
+@media (max_width: 768px){
+  .contenedor{
+    width:95%;
+  }
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #000000;
+  border-radius: 5px ;
+  cursor: pointer;
+}
+
+
+footer{
+  background-color: #D7C4B7;
+  color: #000000;
+  text-align: center;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+/* AREA PRINCIPAL DE IMAGENES MOVIBLES */
+/* ----------------------------------- */
+.principal-plushes{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Separa los botones de las imágenes */
+  margin: 40px auto;
+  width: 100%;
+  max-width: 1400px; /*Hasta donde llegan las flechas del margen*/
+}
+
+.dinamismo{
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 700px; /* Ancho de la zona de juego del carrusel */
+  height: 250px;
+  margin: 0 auto;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+/* Este es el principal de las imagenes de la parte principal*/
+.pelu-item {
+  margin-top: 150px;
+  position: absolute; /*quietesita*/
+  width: 900px;
+  height: 500px;
+  border-radius: 40px;
+  object-fit: cover; 
+  transition: transform 0.5s ease, opacity 0.5s ease, z-index 0.5s ease;
+}
+
+/* Centro*/
+.item-center {
+  transform: translate3d(0, 0, 0) scale(1);
+  opacity: 1;
+  z-index: 3;
+}
+.item-left {
+  transform: translate3d(-550px, 0, -100px) rotateY(25deg) scale(0.8);
+  opacity: 0.5;
+  z-index: 1;
+}
+.item-right {
+  transform: translate3d(550px, 0, -100px) rotateY(-25deg) scale(0.8);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+button.pelu-arrow{
+  margin-top: 140px; 
+  align-self: flex-end;
+  background: none;
+  background-color:#ffffff00;
+  border:none;
+  font-size: 100px;
+  color: #ffffffc2;
+  cursor: pointer;
+  perspective: 1000px;
+  transition: transform 0.5s;
+}
+
+.pelu-arrow:hover{
+  transform: scale(1.2);
+}
+
+/*--------------------------*/
+/* FIN AREA MOVIBLE         */
+/*--------------------------*/
+
+.movil {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
