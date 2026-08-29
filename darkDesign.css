@@ -162,3 +162,9 @@ button.pelu-arrow{
   border-radius: 8px;
 }
 
+.contenedor img {
+    width: 300px;       /* ancho fijo, ajusta a tu gusto */
+    height: 400px;       /* alto fijo, igual al ancho para que sea cuadrado */
+    object-fit: cover;   /* recorta la imagen para llenar el espacio sin deformarla */
+    display: block;
+}
