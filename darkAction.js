@@ -12,7 +12,7 @@ busq.addEventListener("submit",
         if (valor === 'snoopy'){
             //EJ: window.open para una url funcional, y _blank para pestaña nueva
             //EJ: window.location.href('snoopy.png') para ir a una locacion
-            window.open("darkAssets/Imagenes/Snoopy.jpg",'_blank');
+            window.open("categoria snoopys.html",'_blank');
         }
 
     const imagens = [
