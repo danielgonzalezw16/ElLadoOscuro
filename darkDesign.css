@@ -163,8 +163,16 @@ button.pelu-arrow{
 }
 
 .contenedor img {
-    width: 300px;       /* ancho fijo, ajusta a tu gusto */
-    height: 400px;       /* alto fijo, igual al ancho para que sea cuadrado */
+    width: 300px;       /* ancho fijo*/
+    height: 400px;       /* alto fijo*/
     object-fit: cover;   /* recorta la imagen para llenar el espacio sin deformarla */
     display: block;
+}
+
+
+.contenedor {
+    display: flex; /* Pone los elementos lado a lado */
+    align-items: center; /* Alinea el texto al centro verticalmente */
+    gap: 15px; /* Crea espacio entre la imagen y el texto */
+    margin-bottom: 20px; /* para que entre cada imagen tenga un espacio*/
 }
