@@ -15,19 +15,9 @@ body{
   margin: auto;
 }
 
-.busqueda{
-  display: grid;
-  border:rgb(255, 221, 201);
-  background-position: center center;
-  background-color: #d49362;
-  background-attachment: fixed;
-  width: 95%;
-  gap: 2px;
-  margin:10px;
-}
+/* SECCIÓN MENÚ Y BUSQUEDA */
+/* ----------------------- */
 
-/*SECCION PARA EL MENU PRINCIPAL*/
-/*------------------------------*/
 .menu{
   display: grid;
   width: 10%;
@@ -35,27 +25,57 @@ body{
   margin-bottom: 100px;
 }
 
-/* 1. ESTILO INICIAL: Color de texto y transición suave */
+/* SubSección: Barra de Busqueda*/
+/* -----------------------------*/
+
+#barraBusqueda {
+  width: 1000px; /* Ancho */
+  background-color: #ffe2c7;
+  color: #333333;
+  transition: width 0.4s ease-in-out; /* Suavidad y Tiempo Animación */
+}
+
+/* Funcion para Expandir */
+#barraBusqueda:focus {
+  width: 1250px; /* Tamaño Extensión */
+  outline: none; /* Quita el Borde Azul Default*/
+}
+
+.separador {
+  width: 1.5px; /* Grosor */
+  height: 20px; /* Altura */
+  background-color: #4e3629; 
+  opacity: 0.5; /* Transparencia */
+}
+
+/* --------------------------- */
+/* - Fin SubSección Busqueda - */
+/* --------------------------- */
+
+/* SubSección: Botones */
+/* ------------------- */
+
+/* Color Texto y Transición */
 .nav-justified .nav-link {
-  color: #5c4a3c !important; /* Café Oscuro Texturizado para legibilidad sobre el Fondo Café */
-  transition: all 0.3s ease;   /* Hace que el cambio de color sea suave y fluido, no un golpe brusco */
+  color: #5c4a3c !important; /* Café Oscuro para el Fondo Café */
+  transition: all 0.3s ease;   /* Para hacer Cambio de Color Suave y Fluido */
 }
 
-/* 2. Efecto Hover: Efecto al colocar mouse encima de Opcion Inactiva */
+/* Efecto al poner Mouse en Opcion Inactiva */
 .nav-justified .nav-link:not(.active):hover {
-  background-color: rgba(255, 255, 255, 0.5) !important; /* Se vuelve blanco translúcido (tipo vidrio) */
-  color: #3d2f24 !important; /* El texto se oscurece un poco más para mantener el contraste */
-  border-radius: 20px; /* Bordes redondeados para un efecto más suave */
+  background-color: rgba(255, 255, 255, 0.5) !important; /* Color Traslúcido */
+  color: #3d2f24 !important; /* Para que el Texto se Oscurezca y haga Contraste */
+  border-radius: 20px; /* Bordes Redondos para Suavidad */
 }
 
-/* 3. Control de Pildora en Uso (La que está activa fija) */
+/* Opción en Uso */
 .nav-justified .nav-link.active {
-  background-color: #ffffff !important; /* Blanco sólido para la pestaña de la página actual */
-  color: #3d2f24 !important; /* Color del texto dentro de la píldora blanca fija */
+  background-color: #ffffff !important; /* Blanco para la Pildora Actual */
+  color: #3d2f24 !important; /* Color Texto en la Pildora */
 }
 
 /*------------------------------*/
-/*       Fin Seccion Menu       */
+/*       Fin Sección Menu       */
 /*------------------------------*/
 
 @media (max_width: 768px){
@@ -72,16 +92,6 @@ body{
   cursor: pointer;
 }
 
-
-footer{
-  background-color: #D7C4B7;
-  color: #000000;
-  text-align: center;
-  padding: 15px;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-}
-
 /* AREA PRINCIPAL DE IMAGENES MOVIBLES */
 /* ----------------------------------- */
 .principal-plushes{
@@ -89,17 +99,18 @@ footer{
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px; /* Separa los botones de las imágenes */
+  gap: 20px; /* Separa los Botones de las Imágenes */
   margin: 40px auto;
+  margin-bottom: 250px;
   width: 100%;
-  max-width: 1400px; /*Hasta donde llegan las flechas del margen*/
+  max-width: 1400px; /*Hasta donde llegan las Flechas del Margen*/
 }
 
 .dinamismo{
   position: relative;
   display: flex;
   align-items: center;
-  width: 700px; /* Ancho de la zona de juego del carrusel */
+  width: 700px; /* Ancho de la Zona del Carrusel */
   height: 250px;
   margin: 0 auto;
   justify-content: center;
@@ -113,8 +124,13 @@ footer{
   width: 900px;
   height: 500px;
   border-radius: 40px;
-  object-fit: cover; 
+  object-fit: cover;
+  cursor: pointer; 
   transition: transform 0.5s ease, opacity 0.5s ease, z-index 0.5s ease;
+}
+
+.pelu-item.item-center.efecto{
+  transform: translate3d(0, 0, 0) scale(1.05);
 }
 
 /* Centro*/
@@ -134,6 +150,7 @@ footer{
   z-index: 1;
 }
 
+/* Este son Ambas Flechas no solo Una*/
 button.pelu-arrow{
   margin-top: 140px; 
   align-self: flex-end;
@@ -145,8 +162,10 @@ button.pelu-arrow{
   cursor: pointer;
   perspective: 1000px;
   transition: transform 0.5s;
+  z-index: 4;
 }
 
+/* Ya saben, pero el efecto de agrandado */
 .pelu-arrow:hover{
   transform: scale(1.2);
 }
@@ -162,3 +181,26 @@ button.pelu-arrow{
   border-radius: 8px;
 }
 
+.contenedor img {
+    width: 300px;       /* ancho fijo*/
+    height: 400px;       /* alto fijo*/
+    object-fit: cover;   /* recorta la imagen para llenar el espacio sin deformarla */
+    display: block;
+}
+
+
+.contenedor {
+    display: flex; /* Pone los elementos lado a lado */
+    align-items: center; /* Alinea el texto al centro verticalmente */
+    gap: 15px; /* Crea espacio entre la imagen y el texto */
+    margin-bottom: 20px; /* para que entre cada imagen tenga un espacio*/
+}
+
+footer{
+  background-color: #D7C4B7;
+  color: #000000;
+  text-align: center;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
