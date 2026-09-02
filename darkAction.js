@@ -154,34 +154,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // formulario del usuario
 function validacion(){
-  const nombre = document.getElementById("nombre").value;
-  const apellido = document.getElementById("apellido").value;
-  const correo = document.getElementById("correo").value;
-  const ciudad = document.getElementById("ciudad").value;
-  const pais = document.getElementById("pais").value;
+   
+  const nombre = document.getElementById("nombre").value.trim();
+  const NroNombre = /\d/.test(nombre);
   
-  if (nombre.trim() === "") {
-    alert("ingrese un nombre");
+  const apellido = document.getElementById("apellido").value.trim();
+  const NroApellido = /\d/.test(apellido);
+
+  const correo = document.getElementById("correo").value.trim();
+  const NroCorreo = /\d/.test(correo)
+
+  const ciudad = document.getElementById("ciudad").value.trim();
+  const NroCiudad = /\d/.test(ciudad)
+
+  const pais = document.getElementById("pais").value.trim();
+  const NroPais = /\d/.test(pais)
+
+
+  if (nombre === "" || NroNombre ) {
+    alert("Ingrese un nombre válido");
     document.getElementById("nombre").focus();
     return false;
 
-  } else if (apellido.trim() === "") {
-    alert("ingrese un apellido");
+  } else if (apellido === "" || NroApellido) {
+    alert("ingrese un apellido válido");
     document.getElementById("apellido").focus();
     return false; 
 
-  } else if (correo.trim() === "") {
-    alert("ingrese un correo");
+  } else if (correo === "" || NroCorreo ) {
+    alert("ingrese un correo válido");
     document.getElementById("correo").focus();
     return false; 
 
-  } else if (ciudad.trim() === "") {
-    alert("ingrese un ciudad");
+  } else if (ciudad.trim() === "" || NroCiudad) {
+    alert("ingrese un ciudad válido");
     document.getElementById("ciudad").focus();
     return false; 
 
-  } else if (pais.trim() === "") {
-    alert("ingrese un pais");
+  } else if (pais.trim() === "" || NroPais) {
+    alert("ingrese un pais válido");
     document.getElementById("pais").focus();
     return false; 
   }
