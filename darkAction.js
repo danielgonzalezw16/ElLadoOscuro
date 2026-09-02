@@ -165,22 +165,6 @@ function validacion(){
     document.getElementById("nombre").focus();
     return false;
 
-<<<<<<< HEAD
-=======
-// formulario del usuario
-function validacion(){
-  const nombre = document.getElementById("nombre").value;
-  const apellido = document.getElementById("apellido").value;
-  const correo = document.getElementById("correo").value;
-  const ciudad = document.getElementById("ciudad").value;
-  const pais = document.getElementById("pais").value;
-  
-  if (nombre.trim() === "") {
-    alert("ingrese un nombre");
-    document.getElementById("nombre").focus();
-    return false;
-
->>>>>>> 4352740578fcf9ab6fa03844f64904d928eb7171
   } else if (apellido.trim() === "") {
     alert("ingrese un apellido");
     document.getElementById("apellido").focus();
