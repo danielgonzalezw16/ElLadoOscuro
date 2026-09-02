@@ -151,3 +151,39 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+// formulario del usuario
+function validacion(){
+  const nombre = document.getElementById("nombre").value;
+  const apellido = document.getElementById("apellido").value;
+  const correo = document.getElementById("correo").value;
+  const ciudad = document.getElementById("ciudad").value;
+  const pais = document.getElementById("pais").value;
+  
+  if (nombre.trim() === "") {
+    alert("ingrese un nombre");
+    document.getElementById("nombre").focus();
+    return false;
+
+  } else if (apellido.trim() === "") {
+    alert("ingrese un apellido");
+    document.getElementById("apellido").focus();
+    return false; 
+
+  } else if (correo.trim() === "") {
+    alert("ingrese un correo");
+    document.getElementById("correo").focus();
+    return false; 
+
+  } else if (ciudad.trim() === "") {
+    alert("ingrese un ciudad");
+    document.getElementById("ciudad").focus();
+    return false; 
+
+  } else if (pais.trim() === "") {
+    alert("ingrese un pais");
+    document.getElementById("pais").focus();
+    return false; 
+  }
+  return true;
+}
