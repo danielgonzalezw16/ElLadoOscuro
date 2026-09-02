@@ -154,44 +154,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // formulario del usuario
 function validacion(){
-   
+  const vLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
   const nombre = document.getElementById("nombre").value.trim();
-  const NroNombre = /\d/.test(nombre);
-  
   const apellido = document.getElementById("apellido").value.trim();
-  const NroApellido = /\d/.test(apellido);
-
   const correo = document.getElementById("correo").value.trim();
-  const NroCorreo = /\d/.test(correo)
-
+  const vCorreo = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const ciudad = document.getElementById("ciudad").value.trim();
-  const NroCiudad = /\d/.test(ciudad)
-
   const pais = document.getElementById("pais").value.trim();
-  const NroPais = /\d/.test(pais)
+  
 
 
-  if (nombre === "" || NroNombre ) {
+  if (nombre === "" || !vLetras.test(nombre) ) {
     alert("Ingrese un nombre válido");
     document.getElementById("nombre").focus();
     return false;
 
-  } else if (apellido === "" || NroApellido) {
+  } else if (apellido === "" || !vLetras.test(apellido) ) {
     alert("ingrese un apellido válido");
     document.getElementById("apellido").focus();
     return false; 
 
-  } else if (correo === "" || NroCorreo ) {
+  } else if (correo === "" || !vCorreo.test(correo)) {
     alert("ingrese un correo válido");
     document.getElementById("correo").focus();
     return false; 
 
-  } else if (ciudad.trim() === "" || NroCiudad) {
+  } else if (ciudad.trim() === "" || !vLetras.test(ciudad) ) {
     alert("ingrese un ciudad válido");
     document.getElementById("ciudad").focus();
     return false; 
 
-  } else if (pais.trim() === "" || NroPais) {
+  } else if (pais.trim() === "" || !vLetras.test(pais) ) {
     alert("ingrese un pais válido");
     document.getElementById("pais").focus();
     return false; 
